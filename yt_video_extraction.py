@@ -26,7 +26,7 @@ def video_to_barcode(video_path , save_dir, width = 1024, height= 440):
 
 
 def get_videobarcode_with_link(video_link, save_dir, width = 1024, height= 440):
-    video_path = download_yt_video(video_link)
+    video_path = download_yt_video(video_link, save_dir + "/videos")
     moviebarcode = Moviebarcode(video_path)
     moviebarcode.generate()
     name = save_dir + video_path.split("/")[-2].split(".")[0] + '.png'
